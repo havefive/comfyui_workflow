@@ -1,0 +1,677 @@
+{
+  "last_node_id": 15,
+  "last_link_id": 15,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "ModelSamplingDiscrete",
+      "pos": [
+        1480,
+        600
+      ],
+      "size": {
+        "0": 370,
+        "1": 82
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 3,
+          "name": "model",
+          "type": "MODEL",
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            4,
+            12
+          ],
+          "name": "MODEL",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "MODEL",
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingDiscrete"
+      },
+      "widgets_values": [
+        "lcm",
+        false
+      ]
+    },
+    {
+      "id": 7,
+      "type": "VAEDecode",
+      "pos": [
+        2590,
+        720
+      ],
+      "size": {
+        "0": 140,
+        "1": 50
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 10,
+          "name": "samples",
+          "type": "LATENT",
+          "label": "samples"
+        },
+        {
+          "link": 11,
+          "name": "vae",
+          "type": "VAE",
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            13
+          ],
+          "name": "IMAGE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "IMAGE",
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 12,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        1480,
+        980
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 15,
+          "name": "clip",
+          "type": "CLIP",
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            6
+          ],
+          "name": "CONDITIONING",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONDITIONING",
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced"
+      },
+      "widgets_values": [
+        "(nipples:1.5), (worst quality:1.3), unfinished sketch, blurry, normal, mundane, boring, everyday, safe, ordinary, monochrome, greyscale, NSFW",
+        "mean",
+        "A1111"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1930,
+        800
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "links": [
+            9
+          ],
+          "name": "LATENT",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "LATENT",
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        768,
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SamplerLCMCycle",
+      "pos": [
+        1923,
+        1100
+      ],
+      "size": {
+        "0": 210,
+        "1": 130
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "links": [
+            7
+          ],
+          "name": "SAMPLER",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "SAMPLER",
+          "label": "SAMPLER"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerLCMCycle"
+      },
+      "widgets_values": [
+        2,
+        2,
+        false,
+        0
+      ]
+    },
+    {
+      "id": 6,
+      "type": "SamplerCustom",
+      "pos": [
+        2180,
+        750
+      ],
+      "size": [
+        360,
+        442
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 4,
+          "name": "model",
+          "type": "MODEL",
+          "label": "model"
+        },
+        {
+          "link": 5,
+          "name": "positive",
+          "type": "CONDITIONING",
+          "label": "positive"
+        },
+        {
+          "link": 6,
+          "name": "negative",
+          "type": "CONDITIONING",
+          "label": "negative"
+        },
+        {
+          "link": 7,
+          "name": "sampler",
+          "slot_index": 3,
+          "type": "SAMPLER",
+          "label": "sampler"
+        },
+        {
+          "link": 8,
+          "name": "sigmas",
+          "slot_index": 4,
+          "type": "SIGMAS",
+          "label": "sigmas"
+        },
+        {
+          "link": 9,
+          "name": "latent_image",
+          "slot_index": 5,
+          "type": "LATENT",
+          "label": "latent_image"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [],
+          "name": "output",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "LATENT",
+          "label": "output"
+        },
+        {
+          "links": [
+            10
+          ],
+          "name": "denoised_output",
+          "shape": 3,
+          "slot_index": 1,
+          "type": "LATENT",
+          "label": "denoised_output"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustom"
+      },
+      "widgets_values": [
+        true,
+        322454145060902,
+        "randomize",
+        1.5
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoraLoader",
+      "pos": [
+        1130,
+        700
+      ],
+      "size": {
+        "0": 290,
+        "1": 130
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 1,
+          "name": "model",
+          "type": "MODEL",
+          "label": "model"
+        },
+        {
+          "link": 2,
+          "name": "clip",
+          "type": "CLIP",
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            3
+          ],
+          "name": "MODEL",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "MODEL",
+          "label": "MODEL"
+        },
+        {
+          "links": [
+            14,
+            15
+          ],
+          "name": "CLIP",
+          "shape": 3,
+          "slot_index": 1,
+          "type": "CLIP",
+          "label": "CLIP"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "lcm/lcm_lora_sdxl_lora_weights.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        2200,
+        600
+      ],
+      "size": {
+        "0": 350,
+        "1": 60
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "links": [
+            11
+          ],
+          "name": "VAE",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "vae-ft-mse-840000-ema-pruned.ckpt"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        1136,
+        869
+      ],
+      "size": {
+        "0": 290,
+        "1": 100
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "links": [
+            1
+          ],
+          "name": "MODEL",
+          "slot_index": 0,
+          "type": "MODEL",
+          "label": "MODEL"
+        },
+        {
+          "links": [
+            2
+          ],
+          "name": "CLIP",
+          "slot_index": 1,
+          "type": "CLIP",
+          "label": "CLIP"
+        },
+        {
+          "links": [],
+          "name": "VAE",
+          "slot_index": 2,
+          "type": "VAE",
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "picxReal_10Lcm.safetensors"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "LCMScheduler",
+      "pos": [
+        1923,
+        957
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 12,
+          "name": "model",
+          "slot_index": 0,
+          "type": "MODEL",
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            8
+          ],
+          "name": "SIGMAS",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "SIGMAS",
+          "label": "SIGMAS"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LCMScheduler"
+      },
+      "widgets_values": [
+        4,
+        1
+      ]
+    },
+    {
+      "id": 11,
+      "type": "BNK_CLIPTextEncodeAdvanced",
+      "pos": [
+        1480,
+        730
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 14,
+          "name": "clip",
+          "type": "CLIP",
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "links": [
+            5
+          ],
+          "name": "CONDITIONING",
+          "shape": 3,
+          "slot_index": 0,
+          "type": "CONDITIONING",
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BNK_CLIPTextEncodeAdvanced"
+      },
+      "widgets_values": [
+        "1 art photo by michiko kon, intricate, ultra-detailed, sharp details, cg 8k wallpaper, woman, swimsuit, many goldfishes, medium hair, bangs, curly hair, blue hair, green eyes, silver earrings, underwater lighting, beautiful underwater crescent, black dress, pink shirt,",
+        "mean",
+        "A1111"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "PreviewImage",
+      "pos": [
+        2780,
+        660
+      ],
+      "size": [
+        434.2765897544068,
+        617.2775533376623
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 13,
+          "name": "images",
+          "type": "IMAGE",
+          "label": "images"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      1,
+      1,
+      2,
+      1,
+      "CLIP"
+    ],
+    [
+      3,
+      2,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      4,
+      3,
+      0,
+      6,
+      0,
+      "MODEL"
+    ],
+    [
+      5,
+      11,
+      0,
+      6,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      12,
+      0,
+      6,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      9,
+      0,
+      6,
+      3,
+      "SAMPLER"
+    ],
+    [
+      8,
+      8,
+      0,
+      6,
+      4,
+      "SIGMAS"
+    ],
+    [
+      9,
+      5,
+      0,
+      6,
+      5,
+      "LATENT"
+    ],
+    [
+      10,
+      6,
+      1,
+      7,
+      0,
+      "LATENT"
+    ],
+    [
+      11,
+      4,
+      0,
+      7,
+      1,
+      "VAE"
+    ],
+    [
+      12,
+      3,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      13,
+      7,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      2,
+      1,
+      11,
+      0,
+      "CLIP"
+    ],
+    [
+      15,
+      2,
+      1,
+      12,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "0246.VERSION": [
+      0,
+      0,
+      4
+    ]
+  },
+  "version": 0.4
+}
