@@ -45,7 +45,9 @@ tips: can be directly dragged into comfyui
 ### 高级工作流
 - 接入sd3 medium 的中文版肖像大师，ref from [zho-zho-zho](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Workflows-ZHO)
   <img src="workflows/advanced/portrait_zh_sd3_medium_blue.png">
-
+- style align 风格一致性生成 [style align](https://github.com/brianfitzgerald/style_aligned_comfy)  [教学](https://www.youtube.com/watch?v=itBiBOYWHF8)
+  - 在一个batch内, 可以生成朝向一致且风格一致的结果
+  <img src="workflows/advanced/style_align_in_batch.png">
 <!-- - 0001_img_face_detailar
   - 人脸修复，使用 facedetailer 进行重采样
   <img src="resource/0001_face_ori.png" width="128" height="128">
