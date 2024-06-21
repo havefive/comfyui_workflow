@@ -1,9 +1,10 @@
-# comfyui_workflow
+# comfyui_workflows
 
 - 基础工作流
 - 工具
 - 高级工作流
 
+tips: can be directly dragged into comfyui
 
 ### 基础工作流
 
@@ -27,18 +28,21 @@
 ### 工具
 - reactor, 换脸简单示例
    <img src="workflows/tools/reactor_basic.png">
-- dwpose 关键点检测
-- depth map 深度图获取
-- yolo 检测相关
+- dwpose keypoints detect
+- depth map
+- yolo 
   - yolo face detect
   - yolo face seg
   - yolo worlds
   - yolo hands detect
-- 图像超分，简单调用
-- 
+- super resolution
+- face landmarks seg
+- clothes seg
 
 
 ### 高级工作流
+- 接入sd3 medium 的中文版肖像大师，ref from  [zho-zho-zho](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Workflows-ZHO)
+  <img src="workflows/advanced/portrait_zh_sd3_medium.png">
 <!-- - 0001_img_face_detailar
   - 人脸修复，使用 facedetailer 进行重采样
   <img src="resource/0001_face_ori.png" width="128" height="128">
