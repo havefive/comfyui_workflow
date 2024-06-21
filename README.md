@@ -36,6 +36,8 @@ tips: can be directly dragged into comfyui
   - yolo worlds
   - yolo hands detect
 - super resolution
+  - basic sr model with img
+    <img src="workflows/tools/super_resolution_basic_1.png">
 - face landmarks seg
 - clothes seg
 
