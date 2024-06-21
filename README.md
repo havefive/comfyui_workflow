@@ -30,11 +30,12 @@ tips: can be directly dragged into comfyui
 - reactor, 换脸简单示例
    <img src="workflows/tools/reactor_basic.png">
 - dwpose keypoints detect
+   <img src="workflows/tools/dwpose.png">
 - depth map
 - yolo 
   - yolo face detect
     <img src="workflows/tools/yolo_face_detect.png">
-  - yolo face seg
+  - yolo face seg [model ref from](https://huggingface.co/jags/yolov8_model_segmentation-set/tree/main)，选择不同的模型得到不同区域，适用于人脸，人体等
     <img src="workflows/tools/yolo_face_seg.png">
   - yolo worlds
   - yolo hands detect
@@ -43,6 +44,9 @@ tips: can be directly dragged into comfyui
     <img src="workflows/tools/super_resolution_basic_1.png">
 - face landmarks seg
 - clothes seg
+- background remove
+  - BRIA 1.4（could deal with video）
+  <img src="workflows/tools/background_remove_BRIA.png">
 
 
 ### 高级工作流
@@ -56,7 +60,8 @@ tips: can be directly dragged into comfyui
     <img src="workflows/advanced/face_detailer_with_sd_gened.png">
   - 输入人脸
     <img src="workflows/advanced/face_detailer_with_sd.png">
-
+- ipadapter 多元素组合，全图作用
+  <img src="workflows/advanced/ipadapter_combine_multi_items.png">
 
 ### comfyui 插件说明
 
