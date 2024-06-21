@@ -3,6 +3,7 @@
 - 基础工作流
 - 工具
 - 高级工作流
+- comfyui 插件说明
 
 tips: can be directly dragged into comfyui
 
@@ -32,7 +33,9 @@ tips: can be directly dragged into comfyui
 - depth map
 - yolo 
   - yolo face detect
+    <img src="workflows/tools/yolo_face_detect.png">
   - yolo face seg
+    <img src="workflows/tools/yolo_face_seg.png">
   - yolo worlds
   - yolo hands detect
 - super resolution
@@ -48,11 +51,21 @@ tips: can be directly dragged into comfyui
 - style align 风格一致性生成 [style align](https://github.com/brianfitzgerald/style_aligned_comfy)  [教学](https://www.youtube.com/watch?v=itBiBOYWHF8)
   - 在一个batch内, 可以生成朝向一致且风格一致的结果
   <img src="workflows/advanced/style_align_in_batch.png">
-<!-- - 0001_img_face_detailar
-  - 人脸修复，使用 facedetailer 进行重采样
-  <img src="resource/0001_face_ori.png" width="128" height="128">
-  <img src="resource/0001_face_detailer.png" width="128" height="128">
+- 人脸修复 适用 facedetailer 模块进行重采样，注意此处会修复过大，失真可能严重，谨慎使用
+  - 模型生成的人脸
+    <img src="workflows/advanced/face_detailer_with_sd_gened.png">
+  - 输入人脸
+    <img src="workflows/advanced/face_detailer_with_sd.png">
 
+
+### comfyui 插件说明
+
+- https://github.com/ltdrdata/ComfyUI-Impact-Pack
+- https://github.com/WASasquatch/was-node-suite-comfyui
+- https://github.com/rgthree/rgthree-comfy
+- https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+
+<!-- 
 - 0002_video_get_mask
   - 使用 segment everything 进行 codef 的数据预处理，生成对应的 mask 和图片帧并保存在指定文件夹，注意需要指定保存的根路径，使用了一些字符串拼接操作
   - https://qiuyu96.github.io/CoDeF/
