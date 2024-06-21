@@ -1,9 +1,44 @@
 # comfyui_workflow
 
 - 基础工作流
+- 工具
 - 高级工作流
 
-- 0001_img_face_detailar
+
+### 基础工作流
+
+- sd15 basic, 官方示例
+  <img src="workflows/basic/sd15_basic.png">
+- sdxl basic 1
+  <img src="workflows/basic/sdxl_basic_001.png">
+- sdxl basic 2
+  <img src="workflows/basic/sdxl_basic_002.png">
+- svd basic
+  <img src="workflows/basic/svd_basic.png">
+  <video width="320" height="240" controls>
+    <source src="resource/basic/svd_00001.mp4" type="video/mp4">
+  </video>
+<!-- - sd cascade
+  <img src="workflows/basic/sd_cascade_basic.png"> -->
+- sd3 medium
+  <img src="workflows/basic/sd3_medium_basic.png">
+
+### 工具
+- reactor, 换脸简单示例
+   <img src="workflows/tools/reactor_basic.png">
+- dwpose 关键点检测
+- depth map 深度图获取
+- yolo 检测相关
+  - yolo face detect
+  - yolo face seg
+  - yolo worlds
+  - yolo hands detect
+- 图像超分，简单调用
+- 
+
+
+### 高级工作流
+<!-- - 0001_img_face_detailar
   - 人脸修复，使用 facedetailer 进行重采样
   <img src="resource/0001_face_ori.png" width="128" height="128">
   <img src="resource/0001_face_detailer.png" width="128" height="128">
@@ -48,4 +83,4 @@
   - ![workflow](workflows/0008_img_face_detect_and_crop_and_pose.png)
 - 0008_img_face_detect_and_crop
   - 人脸关键点检测
-  - ![workflow](workflows/0008_img_face_detect_and_crop.png)
+  - ![workflow](workflows/0008_img_face_detect_and_crop.png) -->
