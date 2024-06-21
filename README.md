@@ -15,9 +15,10 @@
   <img src="workflows/basic/sdxl_basic_002.png">
 - svd basic
   <img src="workflows/basic/svd_basic.png">
-  <video width="320" height="240" controls>
+  ![svd example](resource/basic/svd_00001.gif)
+  <!-- <video width="320" height="240" controls>
     <source src="resource/basic/svd_00001.mp4" type="video/mp4">
-  </video>
+  </video> -->
 <!-- - sd cascade
   <img src="workflows/basic/sd_cascade_basic.png"> -->
 - sd3 medium
