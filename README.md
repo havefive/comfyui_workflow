@@ -42,7 +42,7 @@ tips: can be directly dragged into comfyui
 
 ### 高级工作流
 - 接入sd3 medium 的中文版肖像大师，ref from [zho-zho-zho](https://github.com/ZHO-ZHO-ZHO/ComfyUI-Workflows-ZHO)
-  <img src="workflows/advanced/portrait_zh_sd3_medium.png">
+  <img src="workflows/advanced/portrait_zh_sd3_medium_blue.png">
 
 <!-- - 0001_img_face_detailar
   - 人脸修复，使用 facedetailer 进行重采样
