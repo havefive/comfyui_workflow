@@ -62,6 +62,10 @@ tips: can be directly dragged into comfyui
     <img src="workflows/advanced/face_detailer_with_sd.png">
 - ipadapter 多元素组合，全图作用
   <img src="workflows/advanced/ipadapter_combine_multi_items.png">
+- ipadapter faceid, sd15 模型, 注意 prompt 不能过于复杂
+  <img src="workflows/advanced/ipadapter_faceid_01.png">
+- ipadapter 使用 mask 对图片进行换衣，需要使用 inpaint 模型
+  <img src="workflows/advanced/ipadapter_image_change_cloth_with_mask.png">
 
 ### comfyui 插件说明
 
