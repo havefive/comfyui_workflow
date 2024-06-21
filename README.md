@@ -1,5 +1,8 @@
 # comfyui_workflow
 
+- 基础工作流
+- 高级工作流
+
 - 0001_img_face_detailar
   - 人脸修复，使用 facedetailer 进行重采样
   <img src="resource/0001_face_ori.png" width="128" height="128">
