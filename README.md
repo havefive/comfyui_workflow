@@ -72,8 +72,6 @@ tips: can be directly dragged into comfyui
   <img src="workflows/advanced/auto_clothes_with_attn_masked_ipadapter_and_animatediff.png">
   <img src="resource/advanced/clothes.jpg" width="384" height="512">
   <img src="resource/advanced/auto_clothes_combine.gif" width="540" height="960" alt="auto clothes example">
-  <img src="resource/advanced/auto_clothes_ori.gif" width="540" height="960" alt="auto clothes example">
-  <img src="resource/advanced/auto_clothes_res.gif" width="540" height="960" alt="auto clothes example">
 
 ### comfyui 插件说明
 
