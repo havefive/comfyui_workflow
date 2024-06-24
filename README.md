@@ -66,6 +66,14 @@ tips: can be directly dragged into comfyui
   <img src="workflows/advanced/ipadapter_faceid_01.png">
 - ipadapter 使用 mask 对图片进行换衣，需要使用 inpaint 模型
   <img src="workflows/advanced/ipadapter_image_change_cloth_with_mask.png">
+- 自动视频换装，使用 ipadapter + animatediff 进行视频换装
+  - 此处计算比较耗时，酌情运行，可以降低图像分辨率，主要思想是利用 ipadapter 的 attn mask 功能对视频进行局部重绘
+  - 需要注意不同 base 模型对视频效果影响挺大，这里使用的是 [麦橘v7](https://civitai.com/models/43331/majicmix-realistic)
+  <img src="workflows/advanced/auto_clothes_with_attn_masked_ipadapter_and_animatediff.png">
+  <img src="resource/advanced/clothes.jpg" width="384" height="512">
+  <img src="resource/advanced/auto_clothes_combine.gif" width="540" height="960" alt="auto clothes example">
+  <img src="resource/advanced/auto_clothes_ori.gif" width="540" height="960" alt="auto clothes example">
+  <img src="resource/advanced/auto_clothes_res.gif" width="540" height="960" alt="auto clothes example">
 
 ### comfyui 插件说明
 
@@ -73,6 +81,7 @@ tips: can be directly dragged into comfyui
 - https://github.com/WASasquatch/was-node-suite-comfyui
 - https://github.com/rgthree/rgthree-comfy
 - https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+- https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes
 
 <!-- 
 - 0002_video_get_mask
